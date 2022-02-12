@@ -8,21 +8,24 @@ namespace Code_Abbey_Solutions
 {
     public class Utilities
     {
-        
-        public static string[] ReadFile(string problem)
+
+        public static List<int> ReadFile(string problem)
         {
             string absolutePath = @"C:\Users\Matt\source\repos\Code Abbey Solutions";
-            string input = System.IO.File.ReadAllText(absolutePath+@$"\Text Files\Problem {problem}.txt");
+            string[] stringArray = new string[] {};
 
-            string[] output = input.Split(" ");
-            return output;
+            foreach (string line in System.IO.File.ReadLines(absolutePath + @$"\Text Files\Problem {problem}.txt"))
+            {
+                stringArray = stringArray.Concat(line.Split(" ")).ToArray();
+            }
+
+            return ArrayToList(stringArray);
         }
 
-        public static List<int> FetchProblemData(string problemNo)
+        public static List<int> ArrayToList(string[] stringArray)
         {
             List<int> intData = new List<int>();
-            string[] stringData = ReadFile(problemNo);
-            foreach (string number in stringData)
+            foreach (string number in stringArray)
             {
                 intData.Add(Int32.Parse(number));
             }
