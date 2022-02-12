@@ -1,4 +1,4 @@
 # Code-Abbey-Solutions
 
-<img src="https://www.codeabbey.com/img/facade.gif" /> 
+Code Abbey is a collection of coding problems with scaling difficulty. This repository is a collection of my answers in C#.
 <img align="left" src="https://www.codeabbey.com/index/user_banner/oddell.png" /> 
