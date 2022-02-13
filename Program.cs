@@ -17,7 +17,9 @@ namespace Code_Abbey_Solutions
             //Problem5().ForEach(Console.WriteLine);
             //Problem6().ForEach(Console.WriteLine);
             //Problem7().ForEach(Console.WriteLine);
-            Problem8().ForEach(Console.WriteLine);
+            //Problem8().ForEach(Console.WriteLine);
+            //Problem9().ForEach(Console.WriteLine);
+            Problem10().ForEach(Console.WriteLine);
         }
 
         /// <summary>
@@ -158,15 +160,88 @@ namespace Code_Abbey_Solutions
             for (int i = 1; i < intData.Count; i += 3)
             {
                 sum = 0;
-                for (int count = 1; count < intData[i+2]+1; count += 1)
+                for (int count = 1; count < intData[i + 2] + 1; count += 1)
                 {
-                    sum += intData[i] + ((count - 1) * intData[i+1]);
+                    sum += intData[i] + ((count - 1) * intData[i + 1]);
                 }
-                
+
                 solution.Add(sum);
+            }
+
+            return solution;
+        }
+
+        /// <summary>
+        /// Triangles
+        /// </summary>
+        static List<int> Problem9()
+        {
+            Console.WriteLine("Problem9()");
+            List<int> intData = Utilities.ReadFile("9");
+
+            List<int> solution = new List<int>();
+
+            for (int i = 1; i < intData.Count; i += 3)
+            {
+                int[] sides = { intData[i], intData[i + 1], intData[i + 2] };
+                Array.Sort(sides);
+
+                if ((sides[0] + sides[1]) > sides[2])
+                {
+                    solution.Add(1);
+                }
+                else
+                {
+                    solution.Add(0);
+                }
+
+            }
+
+            return solution;
+        }
+        /// <summary>
+        /// Linear Function
+        /// (y - y1) / (x - x1) = m
+        /// y = mx + c
+        /// y - mx = c
+        /// </summary>
+        static List<string> Problem10()
+        {
+            Console.WriteLine("Problem10()");
+            List<int> intData = Utilities.ReadFile("10");
+
+            List<string> solution = new List<string>();
+
+            int m;
+            int c;
+
+            for (int i = 1; i < intData.Count; i += 4)
+            {
+                m = (intData[i + 1] - intData[i + 3]) / (intData[i] - intData[i + 2]);
+
+                c = intData[i + 1] - (m * intData[i]);
+
+                solution.Add($"({m} {c})");
+
+            }
+
+            return solution;
+        }
+        static List<int> Problem11()
+        {
+            Console.WriteLine("Problem11()");
+            List<int> intData = Utilities.ReadFile("11");
+
+            List<int> solution = new List<int>();
+
+            for (int i = 1; i < intData.Count; i += 3)
+            {
+                solution.Add((intData[i]*intData[i+1])+intData[i+2]);
+
             }
 
             return solution;
         }
     }
 }
+
