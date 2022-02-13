@@ -8,3 +8,8 @@ Code Abbey is a collection of coding problems with scaling difficulty. This repo
 - Sum A+B
 - Sum in Loop
 - Sum in Loop (Two Columns)
+- Minimum of Two
+- Minimum of Three
+- Rounding
+- Fahrenheit to Celsius
+- Arithmetic Progression
