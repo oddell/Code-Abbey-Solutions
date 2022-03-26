@@ -11,10 +11,9 @@ namespace Code_Abbey_Solutions
 
         public static List<int> ReadFile(string problem)
         {
-            string absolutePath = @"C:\Users\Matt\source\repos\Code Abbey Solutions";
             string[] stringArray = new string[] {};
 
-            foreach (string line in System.IO.File.ReadLines(absolutePath + @$"\Text Files\Problem {problem}.txt"))
+            foreach (var line in System.IO.File.ReadLines(Environment.CurrentDirectory + @$"/Text Files/Problem {problem}.txt"))
             {
                 stringArray = stringArray.Concat(line.Split(" ")).ToArray();
             }

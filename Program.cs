@@ -19,13 +19,13 @@ namespace Code_Abbey_Solutions
             //Problem7().ForEach(Console.WriteLine);
             //Problem8().ForEach(Console.WriteLine);
             //Problem9().ForEach(Console.WriteLine);
-            Problem10().ForEach(Console.WriteLine);
-        }
+            //Problem10().ForEach(Console.WriteLine);
+            Console.WriteLine(Problem15());        }
 
-        /// <summary>
-        /// Sum "A+B"
-        /// </summary>
-        static int Problem1()
+            /// <summary>
+            /// Sum "A+B"
+            /// </summary>
+            static int Problem1()
         {
             Console.WriteLine("Problem1()");
             List<int> intData = Utilities.ReadFile("1");
@@ -239,6 +239,40 @@ namespace Code_Abbey_Solutions
                 solution.Add((intData[i]*intData[i+1])+intData[i+2]);
 
             }
+
+            return solution;
+        }
+
+        //<summary>
+        //Maximum of Array
+        //Use linear search to return greatest value
+        //</summary>
+
+        static string Problem15()
+        {
+            Console.WriteLine("Problem15()");
+            List<int> intData = Utilities.ReadFile("15");
+
+            string solution;
+
+            int maximum = intData[0];
+
+            int minimum = intData[0];
+
+            for (int i = 1; i < intData.Count; i += 1)
+            {
+                if (intData[i] > maximum)
+                {
+                    maximum = intData[i];
+                }
+
+                if (intData[i] < minimum)
+                {
+                    minimum = intData[i];
+                }
+            }
+
+            solution = ($"{maximum} {minimum}");
 
             return solution;
         }
